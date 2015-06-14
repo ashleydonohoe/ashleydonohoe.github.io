@@ -1,0 +1,1 @@
+I used http://cssminifier.com/ to minify the print.css and style.css files.
