@@ -433,6 +433,7 @@ var resizePizzas = function(size) {
       switch(size) {
         case "1":
           return 0.25;
+          console.log(.25);
         case "2":
           return 0.3333;
         case "3":
