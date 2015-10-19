@@ -450,14 +450,14 @@ var resizePizzas = function(size) {
   }
 
   // Sets the pizzas to be resized in an array so that they don't need reaccessed from the DOM within the for loop
-  var pizzas_to_resize = $(".randomPizzaContainer").toArray();
-
+ 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
+     var pizzas_to_resize = document.getElementsByClassName("randomPizzaContainer");
     for (var i = 0; i < pizzas_to_resize.length; i++) {
       var dx = determineDx(pizzas_to_resize)[i], size);
       var newwidth = (pizzas_to_resize)[i].offsetWidth + dx) + 'px';
-      pizz[i].style.width = newwidth;
+      pizzas_to_resize[i].style.width = newwidth;
     }
   }
 
