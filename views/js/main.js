@@ -426,6 +426,11 @@ var resizePizzas = function(size) {
     var oldwidth = elem.offsetWidth;
     var windowwidth = document.getElementById("randomPizzas").offsetWidth;
     var oldsize = oldwidth / windowwidth;
+    // Regrouped variables together in determineDX function
+    var newsize = sizeSwitcher(size);
+    var dx = (newsize - oldsize) * windowwidth;
+    return dx;
+  }
 
     // TODO: change to 3 sizes? no more xl?
     // Changes the slider value to a percent width
@@ -441,20 +446,16 @@ var resizePizzas = function(size) {
           console.log("bug in sizeSwitcher");
       }
     }
-
-    var newsize = sizeSwitcher(size);
-    var dx = (newsize - oldsize) * windowwidth;
-
-    return dx;
   }
   // Puts the randomPizzaContainer items in an array
   var pizzaContainers = $('.randomPizzaContainer').toArray();
-  // Iterates through pizza elements on the page and changes their widths
+  // Iterates through pizza elements on the page and changes their widths.
   function changePizzaSizes(size) {
-    for (var i = 0; i < pizzaContainers.length; i++) {
-      var dx = determineDx(pizzaContainers[i], size);
-      var newwidth = (pizzaContainers[i].offsetWidth + dx) + 'px';
-      pizzaContainers[i].style.width = newwidth;
+    // Put the variables outside of the for loop so that the loop won't repeat these calculations over and over
+      var dx = determineDx(pizzaContainers[0], size);
+      var newwidth = (pizzaContainers[0].offsetWidth + dx) + 'px';
+      for (var i = 0; i < pizzaContainers.length; i++) {
+        pizzaContainers[i].style.width = newwidth;
     }
   }
 
