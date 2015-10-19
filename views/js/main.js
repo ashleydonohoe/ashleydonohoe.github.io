@@ -398,7 +398,7 @@ var pizzaElementGenerator = function(i) {
   return pizzaContainer;
 };
 
-// resizePizzas(size) is called when the slider in the "Our Pizzas" section of the website moves
+// resizePizzas(size) is called when the slider in the "Our Pizzas" section of the website moves.
 var resizePizzas = function(size) { 
   window.performance.mark("mark_start_resize");   // User Timing API function
 
@@ -424,7 +424,7 @@ var resizePizzas = function(size) {
   // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
   function determineDx (elem, size) {
     var oldwidth = elem.offsetWidth;
-    var windowwidth = document.getElementsById("randomPizzas").offsetWidth;
+    var windowwidth = document.querySelector("#randomPizzas").offsetWidth;
     var oldsize = oldwidth / windowwidth;
 
     // TODO: change to 3 sizes? no more xl?
@@ -433,6 +433,7 @@ var resizePizzas = function(size) {
       switch(size) {
         case "1":
           return 0.25;
+          console.log(.25);
         case "2":
           return 0.3333;
         case "3":
@@ -454,9 +455,9 @@ var resizePizzas = function(size) {
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
     for (var i = 0; i < pizzas_to_resize.length; i++) {
-      var dx = determineDx(pizzas_to_resize)[i], size;
-      var newwidth = (pizzas_to_resize[i].offsetWidth + dx) + 'px'; //testing
-      pizzas_to_resize[i].style.width = newwidth;
+      var dx = determineDx(pizzas_to_resize)[i], size);
+      var newwidth = (pizzas_to_resize)[i].offsetWidth + dx) + 'px';
+      pizz[i].style.width = newwidth;
     }
   }
 
