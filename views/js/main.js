@@ -451,7 +451,7 @@ var resizePizzas = function(size) {
     // Put the variables outside of the for loop so that the loop won't repeat these calculations over and over
       var dx = determineDx(document.querySelector(".randomPizzaContainer"), size);
       var newwidth = (document.querySelector(".randomPizzaContainer").offsetWidth + dx) + 'px';
-      var pizzaContainers = document.querySelectorAll(".randomPizzaContainer");
+      var pizzaContainers = document.getElementByClassName("randomPizzaContainer");
       for (var i = 0; i < pizzaContainers.length; i++) {
         pizzaContainers[i].style.width = newwidth;
     }
