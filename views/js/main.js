@@ -446,7 +446,6 @@ var resizePizzas = function(size) {
           console.log("bug in sizeSwitcher");
       }
     }
-  }
   // Puts the randomPizzaContainer items in an array
   var pizzaContainers = $('.randomPizzaContainer').toArray();
   // Iterates through pizza elements on the page and changes their widths.
